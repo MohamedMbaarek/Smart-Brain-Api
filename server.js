@@ -3,15 +3,16 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
-const register = require("./controllers/register")
-const signin = require("./controllers/signin")
-const image = require('./controllers/image')
-const profile = require("./controllers/profile")
+const register = require("./controllers/register");
+const signin = require("./controllers/signin");
+const image = require('./controllers/image');
+const profile = require("./controllers/profile");
 
 const db = knex({
     client: 'pg',
     connection: {
       host : 'dpg-cfe3hmen6mpu0uaq318g-a.frankfurt-postgres.render.com',
+      ssl: true,
       port : 5432,
       user : 'smart_brain_database_f1p1_user',
       password : 'uFOggKlm9xFIz2mNjTueioduicIDFvmM',

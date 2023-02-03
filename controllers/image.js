@@ -40,7 +40,7 @@ handleImage = (req, res, db) => {
     .then(entries => {
         res.json(entries[0])
     })
-    .catch(err => res.status(400).json("unable to get count"))
+    .catch(err => res.status(400).json(err, "unable to get count"))
 }
 
 module.exports = {

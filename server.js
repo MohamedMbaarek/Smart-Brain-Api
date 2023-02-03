@@ -24,14 +24,7 @@ const app = express();
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/', (req, res) => {res.send("gg wp")})
-
-app.post('/register', (req, res) => {
-  try{register.handleRegister(req, res, db, bcrypt)
-  }catch(error){
-    console.log(error)
-  }
-})
+app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt)})
 app.post('/signin', (req, res) => {signin.handleSignIn(req, res, db, bcrypt)})
 app.get('/profile/:id', (req, res) => {profile.handleProfile(req, res, db)}) 
 app.put('/image', (req, res) => {image.handleImage(req,res,db)})

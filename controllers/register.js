@@ -22,7 +22,7 @@ handleRegister = (req, res, db, bcrypt) => {
                 })
                 .transacting(trx)
                 .then(user =>{
-                    res.json("user inserted", user);
+                    res.json("user inserted");
                 })
             })
             .then(trx.commit)
@@ -31,7 +31,7 @@ handleRegister = (req, res, db, bcrypt) => {
         .then(inserts => {
             console.log(inserts.length + " new user saved.")
         })
-    .catch(err => res.status(400).send(err));
+    .catch(err => res.status(400).send("error " + err));
 }
 
 module.exports = {

@@ -27,7 +27,7 @@ handleAPIcall = (req, res) => {
     };
 
     fetch(`https://api.clarifai.com/v2/models/face-detection/versions/6dc7e46bc9124c5c8824be4822abe105/outputs`, requestOptions)
-        .then(response => response.text())
+        .then(response => response.json())
         .then(result => res.json(result))
         .catch(error => console.log('error', error));
 }

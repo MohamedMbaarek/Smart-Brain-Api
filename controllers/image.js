@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import "node-fetch";
 
 handleAPIcall = (req, res) => {
     const raw = JSON.stringify({

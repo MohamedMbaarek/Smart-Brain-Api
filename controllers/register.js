@@ -22,7 +22,7 @@ handleRegister = (req, res, db, bcrypt) => {
                 })
                 .transacting(trx)
                 .then(user =>{
-                    res.json(user[0]);
+                    res.json(user);
                 })
             })
             .then(trx.commit)
